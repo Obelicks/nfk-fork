@@ -1,4 +1,6 @@
 ﻿# NFK Application - Deliberately Vulnerable Webshop
+ username:admin
+ password:admin
 
 The NFK Application is a simple webshop that is deliberately vulnerable for educational purposes.
 
