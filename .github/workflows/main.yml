@@ -1,5 +1,15 @@
-steps:
-  - name: ZAP Scan
-    uses: zaproxy/action-baseline@v0.15.0
-    with:
-      target: 'https://ginandjuice.shop/'
+name: ZAP Baseline Scan
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.15.0
+        with:
+          target: 'https://ginandjuice.shop/'
