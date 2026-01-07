@@ -11,9 +11,5 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Secret Scanning
-      uses: trufflesecurity/trufflehog@main
-      with:
-        base: ""
-        head: ${{ github.ref_name }}
-        extra_args: --results=verified,unknown
+    - name: TruffleHog OSS
+      uses: trufflesecurity/trufflehog@v3.92.4
