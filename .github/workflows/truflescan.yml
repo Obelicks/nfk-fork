@@ -16,9 +16,9 @@ jobs:
       uses: trufflesecurity/trufflehog@main
       with:
         # Repository path
-        path: master
+        path: ./nfk-fork
         # Start scanning from here (usually main branch).
-        base: c90b42721cc2c12f8e9d83bcb08d33701a193512
+        base: master
         # Scan commits until here (usually dev branch).
         #head: # optional
         # Extra args to be passed to the trufflehog cli.
