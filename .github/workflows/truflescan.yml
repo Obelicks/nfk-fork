@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  test:
+  Secret-Scan:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -16,7 +16,7 @@ jobs:
       uses: trufflesecurity/trufflehog@main
       with:
         # Repository path
-        path: $GITHUB_WORKSPACE
+        path: ${{ github.workspace }}
         # Start scanning from here (usually main branch).
         base: master
         # Scan commits until here (usually dev branch).
