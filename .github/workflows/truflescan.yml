@@ -12,7 +12,14 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 5
-    - name: Secret Scanning
+    - name: TruffleHog
       uses: trufflesecurity/trufflehog@main
       with:
-        extra_args: --results=verified,unknown
+        # Repository path
+        path: master
+        # Start scanning from here (usually main branch).
+        base: c90b42721cc2c12f8e9d83bcb08d33701a193512
+        # Scan commits until here (usually dev branch).
+        #head: # optional
+        # Extra args to be passed to the trufflehog cli.
+        extra_args: --log-level=2 --results=verified,unknown
