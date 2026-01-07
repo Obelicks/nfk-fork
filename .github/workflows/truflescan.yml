@@ -5,21 +5,14 @@ on:
   pull_request:
 
 jobs:
-  Secret-Scan:
+  test:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
-        fetch-depth: 5
-    - name: TruffleHog
+        fetch-depth: 0
+    - name: Secret Scanning
       uses: trufflesecurity/trufflehog@main
       with:
-        # Repository path
-        #path: ${{ github.workspace }}
-        # Start scanning from here (usually main branch).
-        base: master
-        # Scan commits until here (usually dev branch).
-        #head: # optional
-        # Extra args to be passed to the trufflehog cli.
-        extra_args: --log-level=2 --results=verified,unknown
+        extra_args: --results=verified,unknown
