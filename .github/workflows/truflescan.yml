@@ -16,7 +16,7 @@ jobs:
       uses: trufflesecurity/trufflehog@main
       with:
         # Repository path
-        #path: 
+        path: .
         # Start scanning from here (usually main branch).
         base: master
         # Scan commits until here (usually dev branch).
